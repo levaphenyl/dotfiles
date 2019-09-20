@@ -77,8 +77,8 @@ focus_follows_mouse yes
 
 # change focus
 bindsym $mod+h focus left
-bindsym $mod+k focus down
-bindsym $mod+j focus up
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
@@ -206,7 +206,7 @@ exec_always --no-startup-id setcursor
 exec_always --no-startup-id numlockx on
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+bindsym $mod+m bar mode toggle 
 
 # Theme colors
 # class                 border		backgr.		 text		  indic.      child_border
@@ -223,13 +223,13 @@ client.background	$background_i3wmthemer
 ### settings for i3-bar ###
 ###########################
 bar {
-        status_command i3status
-        i3bar_command i3bar
-        position bottom
-        tray_output none
+    status_command i3status
+    i3bar_command i3bar
+    position bottom
+    tray_output none
 
-        bindsym button4 nop
-        bindsym button5 nop
+    bindsym button4 nop
+    bindsym button5 nop
 }
 
 
