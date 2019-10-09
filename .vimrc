@@ -43,6 +43,7 @@ if has('gui_running')
   map! <S-Insert> <MiddleMouse>
 endif
 
+set ruler
 filetype plugin on
 syntax on
 filetype indent on
