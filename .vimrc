@@ -44,6 +44,8 @@ if has('gui_running')
 endif
 
 set ruler
+" set tabs display
+set list lcs=trail:·,tab:»·
 filetype plugin on
 syntax on
 filetype indent on
