@@ -56,8 +56,8 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+i exec sudo -E calamares
 
-#bindsym $mod+F2 exec qutebrowser --enable-webengine-inspector
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec qutebrowser
+#bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec terminal -e ranger
 bindsym $mod+F4 exec code
 
