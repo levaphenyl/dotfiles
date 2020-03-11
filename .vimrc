@@ -43,6 +43,9 @@ if has('gui_running')
   map! <S-Insert> <MiddleMouse>
 endif
 
+" add libraries to path for autocompletion
+set path+=/usr/lib/include/**
+
 set ruler
 " set tabs display
 set list lcs=trail:·,tab:»·
