@@ -52,7 +52,7 @@ set list lcs=trail:·,tab:»·
 filetype plugin on
 syntax on
 filetype indent on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
