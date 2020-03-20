@@ -1,4 +1,4 @@
-" The Arch Linux global vimrc - setting only a few sane defaults
+" Inspired from the Arch Linux global vimrc
 "
 " Use /etc/vimrc for system-wide and $HOME/.vimrc for personal configuration
 " (for details see ':help initialization').
@@ -37,17 +37,32 @@ if ! isdirectory(expand(&g:undodir))
   silent! call mkdir(expand(&g:undodir), 'p', 0700)
 endif
 
+" Create parent directories on save
+" From: https://stackoverflow.com/a/4294176/8289769
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
 " Make shift-insert work like in Xterm
 if has('gui_running')
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
 endif
 
-" add libraries to path for autocompletion
+" Add libraries to path for autocompletion
 set path+=/usr/lib/include/**
 
 set ruler
-" set tabs display
+" Set tabs display
 set list lcs=trail:·,tab:»·
 filetype plugin on
 syntax on
