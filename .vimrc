@@ -65,6 +65,7 @@ set ruler
 " Set tabs display
 set list lcs=trail:·,tab:»·
 filetype plugin on
+colorscheme koehler
 syntax on
 filetype indent on
 set tabstop=4
