@@ -7,7 +7,7 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-	output_format = i3bar
+        output_format = i3bar
         colors = true
         interval = 1
 }
@@ -16,7 +16,7 @@ order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "disk /"
-order += "battery all"
+#order += "battery all"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "volume master"
@@ -33,14 +33,12 @@ load {
 }
 
 disk "/" {
-        # format = " hdd %avail "
         #format = " ⛁ %avail "
         prefix_type = "decimal"
         format = "%avail"
 }
 
 disk "/home" {
-        # format = " hdd %avail "
         format = " ⛁ %avail "
 }
 
@@ -61,13 +59,9 @@ battery all {
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
-        # status_chr = ""
         status_chr = "⚡"
-         status_bat = "bat"
-        # status_bat = "☉"
-        # status_unk = "?"
-        status_unk = ""
-        # status_full = ""
+        status_bat = "bat"
+        status_unk = "?"
         status_full = "☻"
         low_threshold = 15
         threshold_type = time
@@ -79,6 +73,7 @@ tztime local {
 
 cpu_temperature 0 {
         format = "%degrees°C"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
 }
 
 volume master {
