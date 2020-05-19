@@ -12,7 +12,6 @@ if &compatible
 endif
 
 set backspace=indent,eol,start
-set ruler
 set suffixes+=.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.png,.toc
 set suffixes-=.h
 set suffixes-=.obj
@@ -52,23 +51,54 @@ augroup BWCCreateDir
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
-" Make shift-insert work like in Xterm
-if has('gui_running')
-  map <S-Insert> <MiddleMouse>
-  map! <S-Insert> <MiddleMouse>
-endif
+" Automatically reload vimrc when saving it
+" From: https://stackoverflow.com/a/2400289/8289769
+augroup rcreload
+    autocmd!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+augroup END
 
 " Add libraries to path for autocompletion
 set path+=/usr/lib/include/**
 
-set ruler
-" Set tabs display
-set list lcs=trail:·,tab:»·
-filetype plugin on
-colorscheme koehler
+" Enable echodoc.
+set cmdheight=2
+let g:echodoc#enable_at_startup=1
+
+" Personal preferences
 syntax on
+filetype plugin on
 filetype indent on
+set ruler
+set number
+set relativenumber
+colorscheme koehler
+highlight LineNr ctermfg=darkgray
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set laststatus=2
+set fileencoding=utf-8
+" From: http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
+" Define custom highlight groups
+highlight User1 ctermbg=darkblue ctermfg=black
+highlight User2 ctermbg=red ctermfg=white
+highlight User3 ctermbg=darkgrey ctermfg=white
+" Define status line
+set statusline=%1*      "switch to User1 highlight
+set statusline+=%t      "tail of the filename
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%2*     "switch to User2 highlight
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%3*     "switch to User3 highlight
+set statusline+=%y      "filetype
+set statusline+=%=      "right align
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+" Set tabs display
+set list lcs=trail:·,tab:»·
 
