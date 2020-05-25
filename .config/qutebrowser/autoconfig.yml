@@ -8,6 +8,11 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  bindings.commands:
+    global:
+      normal:
+        gT: tab-prev
+        gt: tab-next
   completion.web_history.max_items:
     global: -1
   confirm_quit:
@@ -22,12 +27,14 @@ settings:
   content.cookies.accept:
     global: no-3rdparty
   content.cookies.store:
-    global: false
+    global: true
   content.default_encoding:
     global: utf-8
   content.desktop_capture:
     global: ask
   content.dns_prefetch:
+    global: false
+  content.fullscreen.window:
     global: false
   content.geolocation:
     global: ask
@@ -109,8 +116,6 @@ settings:
     global: true
   content.webrtc_ip_handling_policy:
     global: all-interfaces
-  content.windowed_fullscreen:
-    global: false
   content.xss_auditing:
     global: false
   downloads.location.directory:
@@ -137,33 +142,45 @@ settings:
   editor.encoding:
     global: utf-8
   fonts.completion.category:
-    global: bold 11pt monospace
+    global: bold 11pt default_family
   fonts.completion.entry:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.debug_console:
-    global: 11pt monospace
+    global: 11pt default_family
+  fonts.default_family:
+    global:
+    - DejaVu Sans Mono
+    - xos4 Terminus
+    - Terminus
+    - Monospace
+    - Monaco
+    - Bitstream Vera Sans Mono
+    - Andale Mono
+    - Courier New
+    - Courier
+    - Liberation Mono
+    - monospace
+    - Fixed
+    - Consolas
+    - Terminal
   fonts.downloads:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.hints:
-    global: bold 11pt monospace
+    global: bold 11pt default_family
   fonts.keyhint:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.messages.error:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.messages.info:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.messages.warning:
-    global: 11pt monospace
-  fonts.monospace:
-    global: '"DejaVu Sans Mono", "xos4 Terminus", Terminus, Monospace, Monaco, "Bitstream
-      Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace,
-      Fixed, Consolas, Terminal'
+    global: 11pt default_family
   fonts.prompts:
-    global: 11pt sans-serif
+    global: 12pt sans-serif
   fonts.statusbar:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.tabs:
-    global: 11pt monospace
+    global: 11pt default_family
   fonts.web.family.cursive:
     global: null
   fonts.web.family.fantasy:
@@ -176,6 +193,12 @@ settings:
     global: null
   fonts.web.family.standard:
     global: null
+  fonts.web.size.default:
+    global: 16
+  fonts.web.size.default_fixed:
+    global: 14
+  hints.chars:
+    global: asdghjklm
   qt.args:
     global:
     - ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so
