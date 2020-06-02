@@ -1,50 +1,88 @@
-*background:	#272827
-*color0:	#0C090A
-*color1:	#8C001A
-*color10:	#4CC417
-*color11:	#FBB117
-*color12:	#3BB9FF
-*color13:	#E3319D
-*color14:	#00D1D1
-*color15:	#F9FAF9
-*color2:	#41A317
-*color3:	#C68E17
-*color4:	#000080
-*color5:	#7D1B7E
-*color6:	#00CCCC
-*color7:	#B6B6B4
-*color8:	#848482
-*color9:	#F62817
-*cursorColor:	#16A085
-*fadeColor:	black
-*fading:	15
-*foreground:	#B6B6B4
-*pointerColorBackground:	#2B2C2B
-*pointerColorForeground:	#16A085
-URxvt*background:	black
-URxvt*cursorBlink:	true
-URxvt*foreground:	#c6c6c6
-URxvt*mouseWheelScrollPage:	false
-URxvt*saveLines:	5000
-URxvt*scrollBar:	false
-URxvt.background:	[100]#1f1f1f
-URxvt.depth:	0
-URxvt.font:	xft:DejaVuSansMono:size=12
-URxvt.letterSpace:	-1
-URxvt.perl-ext-common:	...,font-size
-XTerm*background:	#2b2b2b
-XTerm*faceName:	Fixed
-XTerm*faceSize:	12
-XTerm*foreground:	#e7e7e7
-XTerm*pointerColor:	#16A085
-XTerm*reverseVideo:	on
-XTerm*selectToClipboard:	true
-Xcursor.size:	0
-Xcursor.theme:	Adwaita
-Xft.antialias:	true
-Xft.autohint:	false
-Xft.dpi:	96
-Xft.hinting:	true
-Xft.hintstyle:	hintslight
-Xft.lcdfilter:	lcddefault
-Xft.rgba:	rgb
+! Reminder of some xkcd colors
+#define _black                                  #000000
+#define _almost_black                           #070d0d
+#define _charcoal                               #343837
+#define _battleship_grey                        #6b7c85
+#define _steel                                  #758595
+#define _silver                                 #c5c9c7
+#define _eggshell                               #ffffd4
+#define _pale_grey                              #fdfdfe
+#define _crimson                                #8c000f
+#define _fire_engine_red                        #fe0002
+#define _pastel_red                             #db5856
+#define _forest                                 #0b5509
+#define _deep_green                             #02590f
+#define _emerald_green                          #028f1e
+#define _baby_shit_green                        #889717
+#define _snot_green                             #9dc100
+#define _apple_green                            #76cd26
+#define _lime_green                             #89fe05
+#define _pastel_green                           #b0ff9d
+#define _rust                                   #a83c09
+#define _pumpkin                                #e17701
+#define _golden_yellow                          #fec615
+#define _pastel_yellow                          #fffe71
+#define _marine                                 #042e60
+#define _royal_blue                             #0504aa
+#define _deep_sky_blue                          #0d75f8
+#define _sky_blue                               #75bbfd
+#define _light_blue                             #95d0fc
+#define _pastel_blue                            #a2bffe
+#define _prussian_blue                          #004577
+#define _teal                                   #029386
+#define _robin_s_egg                            #6dedfd
+#define _pale_turquoise                         #a5fbd5
+#define _deep_purple                            #36013f
+#define _royal_purple                           #4b006e
+#define _pale_magenta                           #d767ad
+#define _pastel_purple                          #caa0ff
+! General colors
+*background:                                    _black
+*foreground:                                    _eggshell
+*color0:                                        _black
+*color8:                                        _steel
+*color1:                                        _crimson
+*color9:                                        _fire_engine_red
+*color2:                                        _emerald_green
+*color10:                                       _baby_shit_green
+*color3:                                        _pumpkin
+*color11:                                       _golden_yellow
+*color4:                                        _marine
+*color12:                                       _sky_blue
+*color5:                                        _royal_purple
+*color13:                                       _pastel_purple
+*color6:                                        _prussian_blue
+*color14:                                       _robin_s_egg
+*color7:                                        _silver
+*color15:                                       _eggshell
+*cursorColor:                                   _lime_green
+*fadeColor:                                     _almost_black
+*fading:                                        15
+*pointerColorBackground:                        _almost_black
+*pointerColorForeground:                        _lime_green
+URxvt*cursorBlink:                              true
+URxvt*foreground:                               _eggshell
+URxvt*mouseWheelScrollPage:                     false
+URxvt*saveLines:                                5000
+URxvt*scrollBar:                                false
+URxvt.background:                               [100]_black
+URxvt.depth:                                    0
+URxvt.font:                                     xft:DejaVuSansMono:size=13
+URxvt.letterSpace:                              -1
+URxvt.perl-ext-common:                          font-size
+XTerm*background:                               _black
+XTerm*faceName:                                 Fixed
+XTerm*faceSize:                                 12
+XTerm*foreground:                               _eggshell
+XTerm*pointerColor:                             _lime_green
+XTerm*reverseVideo:                             on
+XTerm*selectToClipboard:                        true
+Xcursor.size:                                   0
+Xcursor.theme:                                  Adwaita
+Xft.antialias:                                  true
+Xft.autohint:                                   false
+Xft.dpi:                                        96
+Xft.hinting:                                    true
+Xft.hintstyle:                                  hintslight
+Xft.lcdfilter:                                  lcddefault
+Xft.rgba:                                       rgb

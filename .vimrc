@@ -65,25 +65,38 @@ set path+=/usr/lib/include/**
 set cmdheight=2
 let g:echodoc#enable_at_startup=1
 
-" Personal preferences
+" Enable latexsuite
+filetype plugin indent on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+
+" Enable syntastic
 syntax on
-filetype plugin on
-filetype indent on
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Personal preferences
 set ruler
 set number
 set relativenumber
-colorscheme koehler
-highlight LineNr ctermfg=darkgray
+colorscheme phenyl
+set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set laststatus=2
 set fileencoding=utf-8
+" Clear last search pattern
+" From: https://stackoverflow.com/a/657484/8289769
+nnoremap <CR> :let @/ = ""<CR><CR>
+
 " From: http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html
 " Define custom highlight groups
-highlight User1 ctermbg=darkblue ctermfg=black
-highlight User2 ctermbg=red ctermfg=white
-highlight User3 ctermbg=darkgrey ctermfg=white
+highlight User1 ctermbg=DarkBlue ctermfg=fg
+highlight User2 ctermbg=Red ctermfg=fg
+highlight User3 ctermbg=DarkGray ctermfg=fg
 " Define status line
 set statusline=%1*      "switch to User1 highlight
 set statusline+=%t      "tail of the filename
@@ -98,7 +111,11 @@ set statusline+=%y      "filetype
 set statusline+=%=      "right align
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+set statusline+=\ %P\    "percent through file
+set statusline+=%#warningmsg# "switch to warning highlight
+set statusline+=%{SyntasticStatuslineFlag()} "syntastic message
+set statusline+=%*
+
 " Set tabs display
 set list lcs=trail:·,tab:»·
 
