@@ -1,0 +1,10 @@
+[Unit]
+Description=vdirsyncer: Synchronize CalDAV and CardDAV
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target
+

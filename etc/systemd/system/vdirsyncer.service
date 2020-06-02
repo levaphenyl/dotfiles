@@ -1,0 +1,13 @@
+[Unit]
+Description=vdirsyncer: Synchronize CalDAV and CardDAV
+
+[Service]
+User=phenyl
+Type=oneshot
+Environment="CONF=/home/phenyl/.config/vdirsyncer/config"
+ExecStart=/usr/bin/vdirsyncer -c $CONF sync
+ExecStartPost=/usr/bin/vdirsyncer -c $CONF metasync
+
+[Install]
+WantedBy=multi-user.target vdirsyncer.timer
+
