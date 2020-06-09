@@ -29,7 +29,7 @@ hi Directory      cterm=NONE          ctermbg=bg          ctermfg=Blue
 hi ErrorMsg       cterm=bold          ctermbg=bg          ctermfg=Red
 hi FoldColumn     cterm=bold          ctermbg=DarkGray    ctermfg=Cyan
 hi Folded         cterm=NONE          ctermbg=bg          ctermfg=Gray
-hi IncSearch      cterm=bold          ctermbg=Yellow      ctermfg=Black
+hi IncSearch      cterm=bold          ctermbg=DarkYellow  ctermfg=White
 hi LineNr         cterm=NONE          ctermbg=Black       ctermfg=Gray
 hi LineNrAbove    cterm=NONE          ctermbg=Black       ctermfg=DarkGray
 hi LineNrBelow    cterm=NONE          ctermbg=Black       ctermfg=DarkGray
@@ -41,7 +41,7 @@ hi Pmenu          cterm=NONE          ctermbg=bg          ctermfg=fg
 hi PmenuSbar      cterm=NONE          ctermbg=Gray        ctermfg=Black
 hi PmenuSel       cterm=NONE          ctermbg=Green       ctermfg=Black
 hi Question       cterm=bold          ctermbg=bg          ctermfg=Green
-hi Search         cterm=bold          ctermbg=DarkYellow  ctermfg=White
+hi Search         cterm=NONE          ctermbg=Yellow      ctermfg=Black
 hi SignColumn     cterm=NONE          ctermbg=Brown       ctermfg=White
 hi SpecialKey     cterm=NONE          ctermbg=bg          ctermfg=DarkGray
 hi SpellBad       cterm=undercurl     ctermbg=bg          ctermfg=Red
