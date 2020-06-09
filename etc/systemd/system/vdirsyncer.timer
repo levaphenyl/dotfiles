@@ -1,5 +1,6 @@
 [Unit]
 Description=vdirsyncer: Synchronize CalDAV and CardDAV
+After=network.target
 
 [Timer]
 OnBootSec=1min
