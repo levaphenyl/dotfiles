@@ -12,7 +12,7 @@ settings:
     global:
       normal:
         gT: tab-prev
-        gt: tab-next
+        gt: tab-focus
   completion.web_history.max_items:
     global: -1
   confirm_quit:
@@ -86,6 +86,7 @@ settings:
     global: true
   content.media_capture:
     global: ask
+    https://pg.webex.com: true
   content.mouse_lock:
     global: ask
   content.mute:
@@ -94,6 +95,8 @@ settings:
     global: null
   content.notifications:
     global: ask
+    https://app.slack.com: true
+    https://www.reddit.com: false
   content.pdfjs:
     global: true
   content.persistent_storage:
@@ -211,5 +214,6 @@ settings:
       DEFAULT: https://ecosia.org/search?q={}
       gg: https://google.com/search?q={}
       wa: https://wiki.archlinux.org/?search={}
+      wi: https://en.wikipedia.org/?search={}
   url.start_pages:
     global: https://qutebrowser.org/img/cheatsheet-big.png
