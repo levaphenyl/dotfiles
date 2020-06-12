@@ -70,6 +70,10 @@ URxvt.depth:                                    0
 URxvt.font:                                     xft:DejaVuSansMono:size=13
 URxvt.letterSpace:                              -1
 URxvt.perl-ext-common:                          font-size
+URxvt.perl-ext:                                 default,url-select
+URxvt.keysym.M-f:                               perl:url-select:select_next
+URxvt.url-select.launcher:                      /usr/bin/xdg-open
+URxvt.url-select.underline:                     true
 XTerm*background:                               _black
 XTerm*faceName:                                 Fixed
 XTerm*faceSize:                                 12
