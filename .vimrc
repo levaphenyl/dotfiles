@@ -89,6 +89,10 @@ set shiftwidth=4
 set expandtab
 set laststatus=2
 set fileencoding=utf-8
+" Do not insert carriage return when wrapping.
+" From: https://stackoverflow.com/a/2280090/8289769
+set textwidth=80
+set formatoptions-=t
 " Clear last search pattern
 " From: https://stackoverflow.com/a/657484/8289769
 nnoremap <CR> :let @/ = ""<CR><CR>
