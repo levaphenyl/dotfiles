@@ -1,22 +1,3 @@
-set_from_resource	  $color15_i3wmthemer	    color15
-set_from_resource	  $color14_i3wmthemer	    color14
-set_from_resource	  $color13_i3wmthemer	    color13
-set_from_resource	  $color12_i3wmthemer	    color12
-set_from_resource	  $color11_i3wmthemer	    color11
-set_from_resource	  $color10_i3wmthemer	    color10
-set_from_resource	  $color09_i3wmthemer		  color9
-set_from_resource	  $color08_i3wmthemer		  color8
-set_from_resource	  $color07_i3wmthemer		  color7
-set_from_resource 	$color06_i3wmthemer		  color6
-set_from_resource 	$color05_i3wmthemer 	    color5
-set_from_resource 	$color04_i3wmthemer 	    color4
-set_from_resource 	$color03_i3wmthemer 	    color3
-set_from_resource 	$color02_i3wmthemer 	    color2
-set_from_resource 	$color01_i3wmthemer 	    color1
-set_from_resource	  $color00_i3wmthemer		  color0
-set_from_resource	  $foreground_i3wmthemer	foreground
-set_from_resource	  $background_i3wmthemer	background
-
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -195,31 +176,46 @@ mode "resize" {
 # Autostart applications
 #exec xrandr --output HDMI-0 --mode 1920x1080
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id pulseaudio -D
-#exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id redshift
-#exec --no-startup-id udiskie --tray
 exec_always --no-startup-id setcursor
-#exec_always --no-startup-id /home/phenyl/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle 
+bindsym $mod+m bar mode toggle
 
 # Theme colors
-# class                 border		backgr.		 text		  indic.      child_border
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$foreground_i3wmthemer		$foreground_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
+set_from_resource   $Background     background
+set_from_resource   $Foreground     foreground
+set_from_resource   $Black          color0
+set_from_resource   $DarkGray       color8
+set_from_resource   $DarkRed        color1
+set_from_resource   $LightRed       color9
+set_from_resource   $DarkGreen      color2
+set_from_resource   $LightGreen     color10
+set_from_resource   $DarkYellow     color3
+set_from_resource   $LightYellow    color11
+set_from_resource   $DarkBlue       color4
+set_from_resource   $LightBlue      color12
+set_from_resource   $DarkPurple     color5
+set_from_resource   $LightPurple    color13
+set_from_resource   $DarkCyan       color6
+set_from_resource   $LightCyan      color14
+set_from_resource   $LightGray      color7
+set_from_resource   $White          color15
+set_from_resource   $Cursor         cursorColor
 
-client.background	$background_i3wmthemer
+# class                 border      backgr.     text        indic.       child_border
+client.focused          $LightCyan  $DarkCyan   $Foreground $LightCyan   $LightCyan
+client.focused_inactive $DarkCyan   $DarkBlue   $Foreground $DarkCyan    $DarkCyan
+client.unfocused        $DarkGray   $Background $LightGray  $DarkGray    $DarkGray
+client.urgent           $DarkRed    $DarkRed    $LightGray  $LightRed    $DarkRed
+client.placeholder      $DarkGray   $Background $DarkGray   $DarkGray    $DarkGray
+client.background       $Background
 
 
 ###########################
-### settings for i3-bar ###
+### Settings for i3-bar ###
 ###########################
 bar {
     status_command i3status
@@ -229,6 +225,17 @@ bar {
 
     bindsym button4 nop
     bindsym button5 nop
+
+    colors {
+        background $Background
+        statusline $Foreground
+        separator $Background
+        # class             border          background      text
+        focused_workspace   $LightCyan      $DarkCyan       $Foreground
+        active_workspace    $DarkCyan       $DarkBlue       $Foreground
+        inactive_workspace  $DarkGray       $Background     $LightGray
+        urgent_workspace    $DarkRed        $DarkRed        $LightGray
+    }
 }
 
 
