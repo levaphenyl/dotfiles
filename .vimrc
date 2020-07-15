@@ -59,9 +59,11 @@ augroup rcreload
 augroup END
 
 " Add libraries to path for autocompletion
-set path+=/usr/lib/include/**
+set path+=/usr/include/**
+set path+=/usr/lib/python*/**
 
 " Enable echodoc.
+" Preview for signature: [i
 set cmdheight=2
 let g:echodoc#enable_at_startup=1
 
@@ -70,13 +72,23 @@ filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
+" Enable jupytext.vim
+let g:jupytext_enable = 1
+let g:jupytext_fmt = 'md'
+
 " Enable syntastic
 syntax on
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_tex_chktex_args = "-n 44"
+let g:syntastic_tex_chktex_args = "-n 1 -n 8 -n 13 -n 44"
+
+" Configuration of jedi-vim
+if has('python3')
+    let g:jedi#force_py_version = 3
+endif
+let g:jedi#show_call_signatures = 2
 
 " Personal preferences
 set ruler
@@ -89,10 +101,9 @@ set shiftwidth=4
 set expandtab
 set laststatus=2
 set fileencoding=utf-8
-" Do not insert carriage return when wrapping.
 " From: https://stackoverflow.com/a/2280090/8289769
 set textwidth=80
-set formatoptions-=t
+set formatoptions=croqlnj
 " Clear last search pattern
 " From: https://stackoverflow.com/a/657484/8289769
 nnoremap <CR> :let @/ = ""<CR><CR>
