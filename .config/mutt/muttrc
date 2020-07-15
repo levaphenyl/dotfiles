@@ -1,0 +1,121 @@
+# From: https://wiki.archlinux.org/index.php/Mutt
+# From: https://gitlab.com/muttmua/mutt/-/blob/master/contrib/sample.muttrc-starter
+# From: http://www.mutt.org/doc/manual/
+
+###############
+# Identity
+#
+source "~/.config/mutt/identity"
+set use_from = yes
+set reverse_name = yes
+set reverse_realname = no
+
+###############
+# Preferences
+#
+# By default, mutt uses the EDITOR variable
+set editor = vim
+# Editing options
+set fast_reply=yes
+set include=yes
+set edit_headers = yes
+set send_charset = "utf-8"
+# Index view
+set sort = threads
+set sort_aux = last-date-received
+set date_format = "%y-%m-%d %H:%M"
+set index_format = "%S %X [%D] (%4c) %-16.16L %s"
+set sleep_time = 0
+# Pager view
+alternative_order multipart/mixed multipart/related text/plain text/html
+mime_lookup application/octet-stream
+set mailcap_path = ~/.config/mutt/mailcap
+auto_view text/html
+set markers = no
+# Alias completion
+set query_command = "echo %s | xargs khard email --parsable --"
+
+###############
+# Posteo
+#
+source "~/.config/mutt/posteo"
+# Store message headers locally to speed things up.
+set header_cache = ~/.cache/mutt
+# Store messages locally to speed things up, like searching message bodies.
+set message_cachedir = "~/Mail"
+# Allow Mutt to open a new IMAP connection automatically.
+unset imap_passive
+# Keep the IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+# How often to check for new mail (time in seconds).
+set mail_check = 60
+
+
+###############
+# Key bindings (Vim-like)
+#
+bind index,pager a reply
+bind index,pager A group-reply
+bind attach,browser,index gg first-entry
+bind pager gg top
+bind index gt change-folder
+bind attach,browser,index G last-entry
+bind pager G bottom
+bind index h browse-mailboxes
+bind pager,attach h exit
+bind pager H display-toggle-weed
+bind index,pager i edit
+bind compose i edit-message
+bind index,pager I set-flag
+bind index j next-undeleted
+bind pager j next-line
+bind pager J next-undeleted
+bind index k previous-undeleted
+bind pager k previous-line
+bind pager K previous-undeleted
+bind browser l select-entry
+bind index l display-message
+bind attach l view-mailcap
+bind attach,compose l view-attach
+macro index,pager m "<pipe-message>khard add-email<Return>" "Add the sender's email to khard"
+bind generic n search-next
+bind index N toggle-new
+bind pager N mark-as-new
+bind index,pager o mail
+bind compose o attach-file
+bind index q quit
+bind index,pager u undelete-message
+bind attach u undelete-entry
+bind index,pager v view-attachments
+bind index,pager w save-message
+bind attach w save-entry
+bind editor <Tab> complete-query
+bind compose <Return> send-message
+bind generic / search
+bind index } next-page
+bind index { previous-page
+bind editor ^N complete
+
+
+###############
+# Colors
+#
+color attachment    none green black
+color bold          bold lightwhite black
+color error         none lightred black
+color hdrdefault    bold white black
+color indicator     none black lightblue
+color markers       none black blue
+color message       none green black
+color normal        none lightwhite black
+color prompt        bold lightmagenta black
+color quoted        none cyan black
+color search        none black lightyellow
+color signature     none blue black
+color status        none lightwhite blue
+color tilde         none magenta black
+color tree          none white black
+color underline     underline lightwhite black
+color index         none lightcyan black ~F
+color index         none green black "~N|~O"
+

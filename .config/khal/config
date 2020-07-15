@@ -1,0 +1,62 @@
+[calendars]
+
+[[posteo_calendar_Privat]]
+path = ~/Calendars/default/
+color = auto
+type = calendar
+
+[[posteo_calendar_Arbeit]]
+path = ~/Calendars/mnsqze/
+color = light red
+type = calendar
+
+[[posteo_calendar_Aufgaben]]
+path = ~/Calendars/lhfnnz/
+color = light green
+type = calendar
+
+[[posteo_calendar_PG]]
+path = ~/Calendars/pg/
+color = light blue
+type = calendar
+
+[[posteo_contacts_local]]
+path = ~/Contacts/default/
+type = birthdays
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[default]
+highlight_event_days = True
+
+[highlight_days]
+color = dark green
+
+[view]
+theme = dark
+bold_for_light_color = False
+
+[keybindings]
+delete = d
+export = e
+today = g
+other = G
+left = h
+view = enter, i
+external_edit = I
+down = j
+up = k
+right = l
+log = L
+new = o
+quit = q
+mark = v
+duplicate = y
+search = /
+save = meta enter
+
