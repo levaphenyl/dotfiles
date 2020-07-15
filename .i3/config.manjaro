@@ -40,18 +40,15 @@ bindsym $mod+F2 exec qutebrowser
 #bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec terminal -e ranger
 bindsym $mod+F4 exec terminal -e ikhal
-bindsym $mod+F5 exec terminal -e $SHELL -c mutt
+bindsym $mod+F5 exec terminal -e mutt
 
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-#bindsym $mod+Ctrl+m exec gnome-alsamixer
-bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+m exec terminal -e alsamixer
 bindsym $mod+Ctrl+p exec xfce4-power-manager-settings
 
 focus_follows_mouse yes
