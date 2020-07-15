@@ -18,10 +18,10 @@ order += "ethernet _first_"
 order += "disk /"
 order += "disk /home"
 order += "memory"
-#order += "battery all"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "volume master"
+order += "battery all"
 order += "tztime local"
 
 
@@ -65,11 +65,11 @@ ethernet _first_ {
 battery all {
         # format = "%status %percentage %remaining %emptytime"
         format = " %status %percentage"
-        format_down = "No battery"
+        format_down = ""
         last_full_capacity = true
         integer_battery_capacity = true
         status_chr = "⚡"
-        status_bat = "bat"
+        status_bat = "↯"
         status_unk = "?"
         status_full = "☻"
         low_threshold = 15
