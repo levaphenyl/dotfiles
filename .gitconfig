@@ -1,0 +1,7 @@
+[user]
+	email = phenyl@posteo.net
+	name = Guillaume Levasseur
+[core]
+	editor = vim
+	excludesfile = /home/phenyl/.gitignore
+
