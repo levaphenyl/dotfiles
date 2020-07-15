@@ -205,12 +205,12 @@ set_from_resource   $LightGray      color7
 set_from_resource   $White          color15
 set_from_resource   $Cursor         cursorColor
 
-# class                 border      backgr.     text        indic.       child_border
-client.focused          $LightCyan  $DarkCyan   $Foreground $LightCyan   $LightCyan
-client.focused_inactive $DarkCyan   $DarkBlue   $Foreground $DarkCyan    $DarkCyan
-client.unfocused        $DarkGray   $Background $LightGray  $DarkGray    $DarkGray
-client.urgent           $DarkRed    $DarkRed    $LightGray  $LightRed    $DarkRed
-client.placeholder      $DarkGray   $Background $DarkGray   $DarkGray    $DarkGray
+# class                 border       backgr.     text        indic.       child_border
+client.focused          $LightPurple $DarkPurple $Foreground $Cursor      $LightPurple
+client.focused_inactive $DarkBlue    $DarkBlue   $Foreground $DarkBlue    $DarkBlue
+client.unfocused        $DarkGray    $Background $LightGray  $DarkGray    $DarkGray
+client.urgent           $DarkRed     $DarkRed    $LightGray  $LightRed    $DarkRed
+client.placeholder      $DarkGray    $Background $DarkGray   $DarkGray    $DarkGray
 client.background       $Background
 
 
@@ -231,8 +231,8 @@ bar {
         statusline $Foreground
         separator $Background
         # class             border          background      text
-        focused_workspace   $LightCyan      $DarkCyan       $Foreground
-        active_workspace    $DarkCyan       $DarkBlue       $Foreground
+        focused_workspace   $LightPurple    $DarkPurple     $Foreground
+        active_workspace    $DarkBlue       $DarkBlue       $Foreground
         inactive_workspace  $DarkGray       $Background     $LightGray
         urgent_workspace    $DarkRed        $DarkRed        $LightGray
     }
