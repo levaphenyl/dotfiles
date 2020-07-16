@@ -5,3 +5,5 @@
 	editor = vim
 	excludesfile = /home/phenyl/.gitignore
 
+[pull]
+	ff = only
