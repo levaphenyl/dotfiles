@@ -1,0 +1,24 @@
+[Default Applications]
+application/pdf=qpdfview.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice-calc.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+application/x-bittorrent=transmission-gtk.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop;
+image/bmp=feh.desktop;
+text/html=org.qutebrowser.qutebrowser.desktop
+text/*=vim.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/chrome=chromium.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/msteams=teams.desktop
+
