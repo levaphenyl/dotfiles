@@ -27,6 +27,7 @@ alias ll='ls -lah'
 alias tree='tree -C'
 alias grep='grep --color'
 alias pacman='pacman --color auto'
+alias yay='yay --color auto'
 
 # Syntax highlight and suggestions
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
