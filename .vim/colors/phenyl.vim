@@ -37,7 +37,7 @@ hi MatchParen     cterm=bold          ctermbg=bg          ctermfg=Yellow
 hi ModeMsg        cterm=bold          ctermbg=DarkGreen   ctermfg=White
 hi MoreMsg        cterm=bold          ctermbg=bg          ctermfg=Green
 hi NoneText       cterm=None          ctermbg=bg          ctermfg=Gray
-hi Pmenu          cterm=NONE          ctermbg=bg          ctermfg=fg
+hi Pmenu          cterm=NONE          ctermbg=DarkGray    ctermfg=fg
 hi PmenuSbar      cterm=NONE          ctermbg=Gray        ctermfg=Black
 hi PmenuSel       cterm=NONE          ctermbg=Green       ctermfg=Black
 hi Question       cterm=bold          ctermbg=bg          ctermfg=Green
