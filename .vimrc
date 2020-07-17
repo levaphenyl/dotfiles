@@ -71,6 +71,9 @@ let g:echodoc#enable_at_startup=1
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+let g:Imap_UsePlaceHolders = 0
+let g:Tex_Menus = 0
+let g:Tex_Folding = 0
 
 " Enable jupytext.vim
 let g:jupytext_enable = 1
