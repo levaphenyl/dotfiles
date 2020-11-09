@@ -67,13 +67,14 @@ set path+=/usr/lib/python*/**
 set cmdheight=2
 let g:echodoc#enable_at_startup=1
 
-" Enable latexsuite
+" Enable latex-suite
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Imap_UsePlaceHolders = 0
 let g:Tex_Menus = 0
 let g:Tex_Folding = 0
+let g:Tex_SmartKeyQuote = 0
 
 " Enable jupytext.vim
 let g:jupytext_enable = 1
@@ -85,7 +86,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_tex_chktex_args = "-n 1 -n 8 -n 13 -n 44"
+let g:syntastic_tex_checkers = ["chktex"]
+let g:syntastic_tex_chktex_args = "-n 1 -n 2 -n 8 -n 13 -n 44"
 
 " Configuration of jedi-vim
 if has('python3')
@@ -102,6 +104,7 @@ set hlsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set tabpagemax=15
 set laststatus=2
 set fileencoding=utf-8
 " From: https://stackoverflow.com/a/2280090/8289769
