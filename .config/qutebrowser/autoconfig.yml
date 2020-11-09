@@ -38,6 +38,7 @@ settings:
     global: false
   content.geolocation:
     global: ask
+    https://www.dupont.com: false
   content.headers.accept_language:
     global: en-US,en,fr,de
   content.headers.custom:
@@ -86,6 +87,8 @@ settings:
     global: true
   content.media_capture:
     global: ask
+    https://discord.com: true
+    https://meet.google.com: true
     https://pg.webex.com: true
   content.mouse_lock:
     global: ask
@@ -95,7 +98,10 @@ settings:
     global: null
   content.notifications:
     global: ask
+    https://8.8mono.biz: false
+    https://9.8mono.biz: false
     https://app.slack.com: true
+    https://meet.google.com: true
     https://www.reddit.com: false
   content.pdfjs:
     global: true
@@ -182,7 +188,9 @@ settings:
     global: 12pt sans-serif
   fonts.statusbar:
     global: 11pt default_family
-  fonts.tabs:
+  fonts.tabs.selected:
+    global: 11pt default_family
+  fonts.tabs.unselected:
     global: 11pt default_family
   fonts.web.family.cursive:
     global: null
@@ -213,6 +221,8 @@ settings:
     global:
       DEFAULT: https://ecosia.org/search?q={}
       gg: https://google.com/search?q={}
+      gs: https://scholar.google.com/scholar?q={}
+      osm: https://openstreetmap.org/search?query={}
       wa: https://wiki.archlinux.org/?search={}
       wi: https://en.wikipedia.org/?search={}
   url.start_pages:
