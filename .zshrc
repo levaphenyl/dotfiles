@@ -21,6 +21,7 @@ SPACESHIP_VI_MODE_SHOW=false
 
 # Exports
 export EDITOR=vim
+export QT_FONT_DPI=1.1
 
 # Aliases
 alias ll='ls -lah'

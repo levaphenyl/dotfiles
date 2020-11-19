@@ -88,6 +88,7 @@ settings:
   content.media_capture:
     global: ask
     https://discord.com: true
+    https://gather.town: true
     https://meet.google.com: true
     https://pg.webex.com: true
   content.mouse_lock:
@@ -172,26 +173,28 @@ settings:
     - Fixed
     - Consolas
     - Terminal
+  fonts.default_size:
+    global: 12pt
   fonts.downloads:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.hints:
-    global: bold 11pt default_family
+    global: bold 12pt default_family
   fonts.keyhint:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.messages.error:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.messages.info:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.messages.warning:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.prompts:
     global: 12pt sans-serif
   fonts.statusbar:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.tabs.selected:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.tabs.unselected:
-    global: 11pt default_family
+    global: 12pt default_family
   fonts.web.family.cursive:
     global: null
   fonts.web.family.fantasy:
@@ -208,6 +211,8 @@ settings:
     global: 16
   fonts.web.size.default_fixed:
     global: 14
+  fonts.web.size.minimum_logical:
+    global: 8
   hints.chars:
     global: asdghjklm
   qt.args:
