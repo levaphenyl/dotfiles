@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 #
 # ~/.xinitrc
 #
 # Executed by startx (run your window manager from here)
 
-if [[ -f ~/.extend.xinitrc ]];then
+if [[ -f ~/.extend.xinitrc ]]; then
     . ~/.extend.xinitrc
 else
     DEFAULT_SESSION=xfce4-session
