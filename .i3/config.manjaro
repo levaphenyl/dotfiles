@@ -24,7 +24,7 @@ font xft:DejaVu Sans Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -33,12 +33,11 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id dmenu_recency
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec qutebrowser
 #bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec terminal -e ranger
-bindsym $mod+F4 exec terminal -e ikhal
-bindsym $mod+F5 exec terminal -e mutt
+bindsym $mod+F3 exec kitty ranger
+bindsym $mod+F4 exec kitty ikhal
+bindsym $mod+F5 exec kitty mutt
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -170,7 +169,7 @@ exec_always --no-startup-id setcursor
 # Control keyboard
 exec_always --no-startup-id numlockx on
 # For keyboard layout toggle run once:
-# localectl --no-convert set-x11-keymap be,ch pc105 ,fr_mac grp:shifts_toggle
+# localectl --no-convert set-x11-keymap be,ch pc105 ,fr grp:shifts_toggle
 # i.e. toggle between AZERTY BE and QWERTZ CH by pressing both shift keys.
 
 # Control external displays
@@ -190,7 +189,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +25
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -25
 
 # Control sound volume
-bindsym $mod+Ctrl+m exec terminal -e alsamixer
+bindsym $mod+Ctrl+m exec kitty alsamixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
