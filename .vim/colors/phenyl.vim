@@ -51,7 +51,7 @@ hi SpellRare      cterm=undercurl     ctermbg=bg          ctermfg=Magenta
 hi StatusLine     cterm=bold          ctermbg=DarkBlue    ctermfg=bg
 hi StatusLineNC   cterm=NONE          ctermbg=bg          ctermfg=Black
 hi VertSplit      cterm=NONE          ctermbg=bg          ctermfg=bg
-hi TabLine        cterm=bold          ctermbg=bg          ctermfg=bg
+hi TabLine        cterm=bold          ctermbg=bg          ctermfg=DarkGray
 hi TabLineFill    cterm=NONE          ctermbg=bg          ctermfg=bg
 hi TabLineSel     cterm=bold          ctermbg=DarkGray    ctermfg=fg
 hi Title          cterm=bold          ctermbg=bg          ctermfg=DarkCyan
