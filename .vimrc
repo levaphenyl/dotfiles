@@ -57,6 +57,8 @@ augroup rcreload
     autocmd!
     autocmd bufwritepost .vimrc source ~/.vimrc
 augroup END
+" Automatically reload the current file
+set autoread
 
 " Add libraries to path for autocompletion
 set path+=/usr/include/**
