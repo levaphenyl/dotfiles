@@ -217,10 +217,10 @@ set_from_resource   $Cursor         cursorColor
 
 # class                 border       backgr.     text        indic.       child_border
 client.focused          $LightPurple $DarkPurple $Foreground $Cursor      $LightPurple
-client.focused_inactive $DarkBlue    $DarkBlue   $Foreground $DarkBlue    $DarkBlue
-client.unfocused        $DarkGray    $Background $LightGray  $DarkGray    $DarkGray
+client.focused_inactive $DarkGray    $Background $Foreground $Background  $DarkGray
+client.unfocused        $DarkGray    $Background $LightGray  $Background  $DarkGray
 client.urgent           $DarkRed     $DarkRed    $LightGray  $LightRed    $DarkRed
-client.placeholder      $DarkGray    $Background $DarkGray   $DarkGray    $DarkGray
+client.placeholder      $Background  $Background $DarkGray   $DarkGray    $Background
 client.background       $Background
 
 
@@ -242,9 +242,9 @@ bar {
         separator $Background
         # class             border          background      text
         focused_workspace   $LightPurple    $DarkPurple     $Foreground
-        active_workspace    $DarkBlue       $DarkBlue       $Foreground
-        inactive_workspace  $DarkGray       $Background     $LightGray
-        urgent_workspace    $DarkRed        $DarkRed        $LightGray
+        active_workspace    $Background     $DarkBlue       $Foreground
+        inactive_workspace  $Background     $Background     $LightGray
+        urgent_workspace    $Background     $DarkRed        $Foreground
     }
 }
 
