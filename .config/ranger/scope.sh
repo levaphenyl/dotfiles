@@ -82,7 +82,6 @@ case "$mimetype" in
     # Ascii-previews of images:
     image/*)
         #img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
-    #    w3m "$path" && exit 4 || exit 1;;
         cp "$path" "$cached" && exit 6 || exit 1;;
     # Image preview for videos, disabled by default:
     video/*)
