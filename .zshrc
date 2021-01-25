@@ -29,11 +29,14 @@ SPACESHIP_VENV_COLOR=12
 # Exports
 export EDITOR=vim
 export QT_FONT_DPI=1.1
+export XDG_CONFIG_HOME=~/.config
 
 # Aliases
 alias ll='ls -lah'
 alias tree='tree -C'
 alias grep='grep --color'
+alias pgrep='pgrep -l'
+alias pkill='pkill -e'
 alias pacman='pacman --color auto'
 alias yay='yay --color auto --editmenu'
 
