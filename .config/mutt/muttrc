@@ -31,6 +31,7 @@ alternative_order multipart/mixed multipart/related text/plain text/html
 mime_lookup application/octet-stream
 set mailcap_path = ~/.config/mutt/mailcap
 auto_view text/html
+alternative_order text/plain text/enriched text/html
 set markers = no
 # Alias completion
 set query_command = "echo %s | xargs khard email --parsable --"
