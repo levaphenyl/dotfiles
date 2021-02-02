@@ -75,9 +75,13 @@ settings:
     '*://authenticator.pingone.com/*': true
     '*://fedauth.pg.com/*': true
     '*://github.com/*': true
+    '*://itaccess.pg.com/*': true
     '*://login.microsoftonline.com/*': true
+    '*://pgglobalenterprise.service-now.com/*': true
     '*://stackoverflow.com/*': true
+    '*://www.flukso.net/*': true
     '*://www.linkedin.com/*': true
+    '*://www.openstreetmap.org/*': true
     '*://www.overleaf.com/*': true
     global: false
   content.javascript.log:
