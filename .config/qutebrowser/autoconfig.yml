@@ -73,12 +73,14 @@ settings:
     '*://*.sharepoint.com/*': true
     '*://*.slack.com/*': true
     '*://authenticator.pingone.com/*': true
+    '*://boardgamegeek.com/*': true
     '*://fedauth.pg.com/*': true
     '*://github.com/*': true
     '*://itaccess.pg.com/*': true
     '*://login.microsoftonline.com/*': true
     '*://pgglobalenterprise.service-now.com/*': true
     '*://stackoverflow.com/*': true
+    '*://www.belfius.be/*': true
     '*://www.flukso.net/*': true
     '*://www.linkedin.com/*': true
     '*://www.openstreetmap.org/*': true
