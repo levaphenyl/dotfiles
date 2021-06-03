@@ -16,6 +16,9 @@ set suffixes+=.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.p
 set suffixes-=.h
 set suffixes-=.obj
 
+" Runtime path must include /usr/share/vim/vimfiles
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after'
+
 " Move temporary files to a secure location to protect against CVE-2017-1000382
 if exists('$XDG_CACHE_HOME')
   let &g:directory=$XDG_CACHE_HOME
@@ -108,6 +111,7 @@ set shiftwidth=4
 set expandtab
 set tabpagemax=15
 set laststatus=2
+set encoding=utf-8
 set fileencoding=utf-8
 " From: https://stackoverflow.com/a/2280090/8289769
 set textwidth=80
