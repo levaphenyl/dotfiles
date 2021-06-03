@@ -17,6 +17,10 @@ check_tty() {
 }
 
 if [ $(check_tty) = "tty1" ]; then
+    # Workaround when the TTY permission change.
+    # From: https://bugs.archlinux.org/task/58159
+    # From: https://github.com/systemd/systemd/issues/10103
+    chmod 1600 /dev/tty1
     exec startx
 fi
 
