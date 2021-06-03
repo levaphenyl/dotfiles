@@ -1,22 +1,3 @@
-set_from_resource   $color15_i3wmthemer     color15
-set_from_resource   $color14_i3wmthemer     color14
-set_from_resource   $color13_i3wmthemer     color13
-set_from_resource   $color12_i3wmthemer     color12
-set_from_resource   $color11_i3wmthemer     color11
-set_from_resource   $color10_i3wmthemer     color10
-set_from_resource   $color09_i3wmthemer     color9
-set_from_resource   $color08_i3wmthemer     color8
-set_from_resource   $color07_i3wmthemer     color7
-set_from_resource   $color06_i3wmthemer     color6
-set_from_resource   $color05_i3wmthemer     color5
-set_from_resource   $color04_i3wmthemer     color4
-set_from_resource   $color03_i3wmthemer     color3
-set_from_resource   $color02_i3wmthemer     color2
-set_from_resource   $color01_i3wmthemer     color1
-set_from_resource   $color00_i3wmthemer     color0
-set_from_resource   $foreground_i3wmtheme   foreground
-set_from_resource   $background_i3wmthemer  background
-
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -37,53 +18,32 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:DejaVu Sans 11
+font xft:monospace 11
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
 
-# start application launcher
-#bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec --no-startup-id dmenu_run_history
+# start program launcher
+bindsym $mod+d exec --no-startup-id bemenu-run -i #dmenu_run_history
 
 # Start Applications
-#bindsym $mod+F2 exec qutebrowser --enable-webengine-inspector
-bindsym $mod+F2 exec chromium
-bindsym $mod+F3 exec urxvt -e ranger
-bindsym $mod+F4 exec code
-
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+F2 exec qutebrowser
+#bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec kitty ranger
+bindsym $mod+F4 exec kitty ikhal
+bindsym $mod+F5 exec kitty mutt
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-
-bindsym Print exec --no-startup-id scrot
-bindsym $mod+Print --release exec --no-startup-id scrot -w
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
-#bindsym $mod+Ctrl+m exec gnome-alsamixer
-bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod+Ctrl+p exec xfce4-power-manager-settings
-
-set $displayMode "Set display mode [l]aptop [w]ork [e]xternal"
-bindsym $mod+p mode $displayMode
-mode $displayMode {
-    bindsym l exec "xrandr --output eDP1 --auto && xrandr --output DP1-1 --off && xrandr --output DP1-2 --off", mode "default"
-
-    bindsym w exec "xrandr --output eDP1 --primary --mode 1920x1080 --rotate normal && xrandr --output DP1-1 --mode 1920x1080 --above eDP1 --rotate normal && xrandr --output DP1-2 --mode 1920x1080 --right-of DP1-1 --rotate left;xset dpms force off && sleep 1 && xset dpms force on", mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-focus_follows_mouse yes
+bindsym Print exec --no-startup-id i3-scrot
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 
 # change focus
+focus_follows_mouse yes
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -97,8 +57,8 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+j move up
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
@@ -114,15 +74,13 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+v split toggle;exec notify-send 'Toggle split'
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+s sticky toggle
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -158,19 +116,18 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id blurlock, mode "default"
+    bindsym s exec --no-startup-id blurlock && sudo systemctl suspend, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym h exec --no-startup-id blurlock && sudo systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id sudo systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id sudo systemctl poweroff, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -202,38 +159,92 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id ~/.fehbg
+exec --no-startup-id syncthing --no-browser
 exec --no-startup-id redshift
-exec_always --no-startup-id numlockx on
+exec --no-startup-id picom -CGb
 
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle 
+# Control keyboard
+exec_always --no-startup-id numlockx on
+# For keyboard layout toggle run once:
+# localectl --no-convert set-x11-keymap be,ch pc105 ,fr_mac grp:shifts_toggle
+# i.e. toggle between AZERTY BE and QWERTZ CH by pressing both shift keys.
+
+# Control external displays
+set $displayMode "Set display mode [l]aptop [h]dmi"
+bindsym $mod+p mode $displayMode
+mode $displayMode {
+    bindsym l exec "xrandr --output eDP-1 --auto && xrandr --output HDMI-1 --off && xrandr --output DP1 --off", mode "default"
+
+    bindsym h exec "xrandr --output eDP-1 --primary --auto && xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1 --rotate normal", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Control screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +25
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -25
+
+# Control sound volume
+bindsym $mod+Ctrl+m exec kitty alsamixer
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # Theme colors
-# class                 border		backgr.		 text		  indic.      child_border
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$foreground_i3wmthemer		$foreground_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
-client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
+set_from_resource   $Background     background
+set_from_resource   $Foreground     foreground
+set_from_resource   $Black          color0
+set_from_resource   $DarkGray       color8
+set_from_resource   $DarkRed        color1
+set_from_resource   $LightRed       color9
+set_from_resource   $DarkGreen      color2
+set_from_resource   $LightGreen     color10
+set_from_resource   $DarkYellow     color3
+set_from_resource   $LightYellow    color11
+set_from_resource   $DarkBlue       color4
+set_from_resource   $LightBlue      color12
+set_from_resource   $DarkPurple     color5
+set_from_resource   $LightPurple    color13
+set_from_resource   $DarkCyan       color6
+set_from_resource   $LightCyan      color14
+set_from_resource   $LightGray      color7
+set_from_resource   $White          color15
+set_from_resource   $Cursor         cursorColor
 
-client.background	$background_i3wmthemer
+# class                 border       backgr.     text        indic.       child_border
+client.focused          $LightPurple $DarkPurple $Foreground $Cursor      $LightPurple
+client.focused_inactive $DarkGray    $Background $Foreground $Background  $DarkGray
+client.unfocused        $DarkGray    $Background $LightGray  $Background  $DarkGray
+client.urgent           $DarkRed     $DarkRed    $LightGray  $LightRed    $DarkRed
+client.placeholder      $Background  $Background $DarkGray   $DarkGray    $Background
+client.background       $Background
 
 
 ###########################
-### settings for i3-bar ###
+### Settings for i3-bar ###
 ###########################
 bar {
     status_command i3status
     i3bar_command i3bar
     position bottom
     tray_output none
+    strip_workspace_numbers yes
 
     bindsym button4 nop
     bindsym button5 nop
+
+    colors {
+        background $Background
+        statusline $Foreground
+        separator $Background
+        # class             border          background      text
+        focused_workspace   $LightPurple    $DarkPurple     $Foreground
+        active_workspace    $Background     $DarkBlue       $Foreground
+        inactive_workspace  $Background     $Background     $LightGray
+        urgent_workspace    $Background     $DarkRed        $Foreground
+    }
 }
 
 
