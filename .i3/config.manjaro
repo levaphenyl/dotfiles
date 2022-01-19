@@ -45,6 +45,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # change focus
 focus_follows_mouse yes
+focus_on_window_activation urgent
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
