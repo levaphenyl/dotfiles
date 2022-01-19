@@ -72,14 +72,8 @@ set path+=/usr/lib/python*/**
 set cmdheight=2
 let g:echodoc#enable_at_startup=1
 
-" Enable latex-suite
-filetype plugin indent on
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
-let g:Imap_UsePlaceHolders = 0
-let g:Tex_Menus = 0
-let g:Tex_Folding = 0
-let g:Tex_SmartKeyQuote = 0
+" Enable latex-box
+filetype plugin on
 
 " Enable jupytext.vim
 let g:jupytext_enable = 1
@@ -114,7 +108,7 @@ set laststatus=2
 set encoding=utf-8
 set fileencoding=utf-8
 " From: https://stackoverflow.com/a/2280090/8289769
-set textwidth=80
+set textwidth=0
 set formatoptions=croqlnj
 " Clear last search pattern
 " From: https://stackoverflow.com/a/657484/8289769
