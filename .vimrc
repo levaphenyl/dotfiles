@@ -108,8 +108,9 @@ set laststatus=2
 set encoding=utf-8
 set fileencoding=utf-8
 " From: https://stackoverflow.com/a/2280090/8289769
-set textwidth=0
-set formatoptions=croqlnj
+set textwidth=84
+set formatoptions+=ronj
+set autoindent
 " Clear last search pattern
 " From: https://stackoverflow.com/a/657484/8289769
 nnoremap <CR> :let @/ = ""<CR><CR>
@@ -130,6 +131,7 @@ set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
 set statusline+=%3*     "switch to User3 highlight
 set statusline+=%y      "filetype
+set statusline+=[%{&fo}] " format options
 set statusline+=%=      "right align
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
