@@ -70,10 +70,10 @@ bind compose i edit-message
 bind index,pager I set-flag
 bind index j next-entry
 bind pager j next-line
-bind index,pager J next-undeleted
+bind index,pager J next-unread
 bind index k previous-entry
 bind pager k previous-line
-bind index,pager K previous-undeleted
+bind index,pager K previous-unread
 bind browser l select-entry
 bind index l display-message
 bind attach l view-mailcap
@@ -92,7 +92,7 @@ bind index,pager w save-message
 bind attach w save-entry
 bind editor <Tab> complete-query
 bind compose <Return> send-message
-bind generic / search
+bind generic / search-reverse
 bind index } next-page
 bind index { previous-page
 bind editor ^N complete
