@@ -83,10 +83,11 @@ let g:jupytext_fmt = 'md'
 syntax on
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_tex_checkers = ["chktex"]
-let g:syntastic_tex_chktex_args = "-n 1 -n 2 -n 8 -n 13 -n 44"
+let g:syntastic_tex_chktex_args = "-n 1 -n 2 -n 8 -n 12 -n 13 -n 44"
 
 " Configuration of jedi-vim
 if has('python3')
@@ -100,17 +101,20 @@ set number
 set relativenumber
 colorscheme phenyl
 set hlsearch
+set tabpagemax=15
+set laststatus=2
+" Indentation, from https://docs.python-guide.org/dev/env/
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set tabpagemax=15
-set laststatus=2
+set softtabstop=4
+set autoindent
+" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 " From: https://stackoverflow.com/a/2280090/8289769
 set textwidth=84
 set formatoptions+=ronj
-set autoindent
 " Clear last search pattern
 " From: https://stackoverflow.com/a/657484/8289769
 nnoremap <CR> :let @/ = ""<CR><CR>
