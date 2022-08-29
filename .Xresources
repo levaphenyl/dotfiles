@@ -67,7 +67,7 @@ URxvt*saveLines:                                5000
 URxvt*scrollBar:                                false
 URxvt.background:                               [100]_black
 URxvt.depth:                                    0
-URxvt.font:                                     xft:DejaVuSansMono:size=14
+URxvt.font:                                     xft:DejaVuSansMono:size=13
 URxvt.letterSpace:                              -1
 URxvt.perl-ext-common:                          font-size
 URxvt.perl-ext:                                 default,url-select
