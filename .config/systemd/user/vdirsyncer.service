@@ -3,7 +3,6 @@ Description=vdirsyncer: Synchronize CalDAV and CardDAV
 After=network-online.target
 
 [Service]
-User=phenyl
 Type=oneshot
 Environment="CONF=/home/phenyl/.config/vdirsyncer/config"
 ExecStart=/usr/bin/vdirsyncer -c $CONF sync
