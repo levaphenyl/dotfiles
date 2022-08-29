@@ -1,0 +1,10 @@
+[Unit]
+Description=Eye resting timer to look every 40 min at 40 m during 40 sec.
+
+[Timer]
+OnBootSec=40min
+OnUnitActiveSec=40min
+
+[Install]
+WantedBy=timers.target
+

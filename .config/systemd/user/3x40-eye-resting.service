@@ -1,0 +1,11 @@
+[Unit]
+Description=Eye resting notification to look every 40 min at 40 m during 40 sec.
+After=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dunstify -a 'Eye resting' 'Time to look away from the screen!'
+
+[Install]
+WantedBy=3x40-eye-resting.timer
+
