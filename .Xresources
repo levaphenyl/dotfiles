@@ -24,6 +24,7 @@
 #define _pastel_yellow                          #fffe71
 #define _marine                                 #042e60
 #define _royal_blue                             #0504aa
+#define _azul                                   #1d5dec
 #define _deep_sky_blue                          #0d75f8
 #define _sky_blue                               #75bbfd
 #define _light_blue                             #95d0fc
@@ -34,6 +35,7 @@
 #define _pale_turquoise                         #a5fbd5
 #define _deep_purple                            #36013f
 #define _royal_purple                           #4b006e
+#define _vibrant_purple                         #ad03de
 #define _pale_magenta                           #d767ad
 #define _pastel_purple                          #caa0ff
 ! General colors
@@ -47,9 +49,9 @@
 *color10:                                       _baby_shit_green
 *color3:                                        _pumpkin
 *color11:                                       _golden_yellow
-*color4:                                        _marine
+*color4:                                        _azul
 *color12:                                       _sky_blue
-*color5:                                        _royal_purple
+*color5:                                        _vibrant_purple
 *color13:                                       _pastel_purple
 *color6:                                        _prussian_blue
 *color14:                                       _robin_s_egg
