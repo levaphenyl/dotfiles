@@ -77,23 +77,23 @@ filetype plugin on
 
 " Enable jupytext.vim
 let g:jupytext_enable = 1
-let g:jupytext_fmt = 'md'
+let g:jupytext_fmt = 'py'
 
-" Enable syntastic
+" Enable ALE completion, disable ongoing linting.
 syntax on
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_tex_checkers = ["chktex"]
-let g:syntastic_tex_chktex_args = "-n 1 -n 2 -n 8 -n 12 -n 13 -n 44"
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_delay = 500
 
 " Configuration of jedi-vim
 if has('python3')
     let g:jedi#force_py_version = 3
 endif
 let g:jedi#show_call_signatures = 2
+
+" Configuration of LanguageTool
+let g:languagetool_cmd='/usr/bin/languagetool'
 
 " Personal preferences
 set ruler
@@ -141,7 +141,6 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P\    "percent through file
 set statusline+=%#warningmsg# "switch to warning highlight
-set statusline+=%{SyntasticStatuslineFlag()} "syntastic message
 set statusline+=%*
 
 " Set tabs display
