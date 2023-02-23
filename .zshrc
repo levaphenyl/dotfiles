@@ -1,8 +1,13 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd extendedglob notify
+HISTSIZE=5000
+SAVEHIST=5000
+setopt incappendhistory  # Write history upon enter, not shell exit.
+setopt histignorealldups  # Remove oldest command duplicate from the list.
+
+setopt autocd  # If input is the name of a directory, cd into it.
+setopt extendedglob  # Treat '#', '~', and '^' as patterns for filename generation.
+setopt notify  # Immediately report status of background jobs.
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -27,9 +32,9 @@ SPACESHIP_GIT_BRANCH_COLOR=13
 SPACESHIP_VENV_COLOR=12
 
 # Exports
-export EDITOR=vim
-export QT_FONT_DPI=1.1
-export XDG_CONFIG_HOME=~/.config
+EDITOR=vim
+QT_FONT_DPI=1.1
+XDG_CONFIG_HOME=~/.config
 
 # Aliases
 alias ll='ls -lah'
@@ -45,4 +50,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/vault vault
