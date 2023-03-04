@@ -85,6 +85,13 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_delay = 500
+" Function to count errors and warnings.
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? '' : printf(' %dW %dE', all_non_errors, all_errors)
+endfunction
 
 " Configuration of jedi-vim
 if has('python3')
@@ -133,14 +140,14 @@ set statusline+=%2*     "switch to User2 highlight
 set statusline+=%h      "help file flag
 set statusline+=%m      "modified flag
 set statusline+=%r      "read only flag
+set statusline+=%{LinterStatus()} " call ALE counters
 set statusline+=%3*     "switch to User3 highlight
 set statusline+=%y      "filetype
-set statusline+=[%{&fo}] " format options
+set statusline+=[%{&fo}]  "format options
 set statusline+=%=      "right align
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P\    "percent through file
-set statusline+=%#warningmsg# "switch to warning highlight
 set statusline+=%*
 
 " Set tabs display
