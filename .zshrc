@@ -5,7 +5,7 @@ SAVEHIST=5000
 setopt incappendhistory  # Write history upon enter, not shell exit.
 setopt histignorealldups  # Remove oldest command duplicate from the list.
 
-setopt autocd  # If input is the name of a directory, cd into it.
+setopt correctall # Try to correct all arguments.
 setopt extendedglob  # Treat '#', '~', and '^' as patterns for filename generation.
 setopt notify  # Immediately report status of background jobs.
 bindkey -v
