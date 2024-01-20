@@ -67,6 +67,17 @@ set autoread
 set path+=/usr/include/**
 set path+=/usr/lib/python*/**
 
+" Declare plugins for vim-plug.
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'vim-scripts/LanguageTool'
+Plug 'vim-scripts/latex-box'
+Plug 'Shougo/echodoc.vim'
+Plug 'goerz/jupytext.vim'
+Plug 'dense-analysis/ale'
+Plug 'davidhalter/jedi-vim'
+call plug#end()
+
 " Enable echodoc.
 " Preview for signature: [i
 set cmdheight=2
