@@ -5,7 +5,6 @@
 ###############
 # Identity
 #
-source "~/.config/mutt/identity"
 set use_from = yes
 set reverse_name = yes
 set reverse_realname = no
@@ -53,11 +52,12 @@ unset imap_passive
 set imap_keepalive = 300
 # How often to check for new mail (time in seconds).
 set mail_check = 60
-# Multi-account configuration (duplicate to add more files).
+# Multi-account configuration (duplicate to add more files, default goes last).
+source "~/.config/mutt/gmail"
 source "~/.config/mutt/posteo"
-folder-hook $folder 'source ~/.config/mutt/posteo'
 # Key bindings to switch accounts.
 macro index <f2> '<sync-mailbox><enter-command>source ~/.config/mutt/posteo<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.config/mutt/gmail<enter><change-folder>!<enter>'
 
 ###############
 # Key bindings (Vim-like)
