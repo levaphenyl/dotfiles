@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=khal interactive
+Icon=khal
+Terminal=true
+
+Name=Khal
+GenericName=Calendar
+Comment=Calendar in the command line.
+

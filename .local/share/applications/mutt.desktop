@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=mutt
+Icon=mutt
+Terminal=true
+
+Name=Mutt
+GenericName=Email Client
+Comment=Email client in the command line.

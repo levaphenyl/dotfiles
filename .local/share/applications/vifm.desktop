@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=vifmrun
+Icon=vifm
+Terminal=true
+
+Name=Vifm
+GenericName=File Manager
+Comment=File manager in the command line inspired by vi.
+
