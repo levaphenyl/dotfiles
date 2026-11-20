@@ -1,28 +1,33 @@
 [calendars]
 
 [[posteo_calendar_Privat]]
-path = ~/Calendars/default/
+path = ~/Calendars/posteo/default/
 color = auto
 type = calendar
 
 [[posteo_calendar_Arbeit]]
-path = ~/Calendars/mnsqze/
+path = ~/Calendars/posteo/mnsqze/
 color = light red
 type = calendar
 
 [[posteo_calendar_Aufgaben]]
-path = ~/Calendars/lhfnnz/
+path = ~/Calendars/posteo/lhfnnz/
 color = light green
-type = calendar
-
-[[posteo_calendar_PG]]
-path = ~/Calendars/pg/
-color = light blue
 type = calendar
 
 [[posteo_contacts_local]]
 path = ~/Contacts/default/
 type = birthdays
+
+[[PG_calendar]]
+path = ~/Calendars/pg/
+color = light blue
+type = calendar
+
+[[lunar_calendar]]
+path = ~/Calendars/lunar/
+color = light gray
+type = calendar
 
 [locale]
 timeformat = %H:%M
